@@ -28,9 +28,12 @@ nltk.data.path.append("/home/adminuser/venv/lib/python3.13/site-packages/nltk/da
 
 try:  # Wrap in a try-except block for better error handling
     stop_words = stopwords.words('english')
+    lemmatizer = WordNetLemmatizer()
 except LookupError:
     nltk.download('stopwords')
     stop_words = stopwords.words('english')
+    nltk.download('wordnet')
+    lemmatizer = WordNetLemmatizer()
 
 stemmer = PorterStemmer()
 lemmatizer = WordNetLemmatizer()
