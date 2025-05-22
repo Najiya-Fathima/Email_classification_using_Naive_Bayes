@@ -24,6 +24,14 @@ from sklearn.metrics import f1_score
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import precision_recall_curve 
 
+nltk.data.path.append("/home/adminuser/venv/lib/python3.13/site-packages/nltk/data.py")
+
+try:  # Wrap in a try-except block for better error handling
+    stop_words = stopwords.words('english')
+except LookupError:
+    nltk.download('stopwords')
+    stop_words = stopwords.words('english')
+
 stemmer = PorterStemmer()
 lemmatizer = WordNetLemmatizer()
 class email_to_clean_text(BaseEstimator, TransformerMixin):
