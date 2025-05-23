@@ -1,11 +1,6 @@
 import streamlit as st
 import joblib
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-import email
-import string
+from sklearn.base import BaseEstimator, TransformerMixin #import base classes
 from bs4 import BeautifulSoup
 import string
 import re
@@ -13,16 +8,7 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 from nltk.stem import WordNetLemmatizer
-import os
-from sklearn.base import BaseEstimator, TransformerMixin
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.model_selection import train_test_split
-from sklearn.pipeline import Pipeline
-from sklearn.metrics import accuracy_score
-from sklearn.metrics import f1_score
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import precision_recall_curve 
+import email
 
 nltk.data.path.append("/home/adminuser/venv/lib/python3.13/site-packages/nltk/data.py")
 
